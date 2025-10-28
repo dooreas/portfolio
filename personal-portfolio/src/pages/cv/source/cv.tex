@@ -1,0 +1,90 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{fontawesome}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+% Define colors
+\definecolor{techblue}{RGB}{0, 102, 204}
+\definecolor{techgray}{RGB}{240, 240, 240}
+
+% Set title format
+\titleformat{\section}{\large\bfseries\color{techblue}}{}{0em}{}[\titlerule]
+
+% Set hyperlink color
+\hypersetup{
+    colorlinks=true,
+    linkcolor=techblue,
+    urlcolor=techblue,
+}
+
+% Custom commands for contact info
+\newcommand{\contact}[2]{\textbf{#1:} \texttt{#2}\\}
+
+\begin{document}
+
+\begin{center}
+    \Huge \textbf{Your Name} \\
+    \vspace{0.2cm}
+    \large Your Job Title \\
+    \vspace{0.5cm}
+    \faEnvelope \ \href{mailto:your.email@example.com}{your.email@example.com} \\
+    \faLinkedin \ \href{https://www.linkedin.com/in/yourprofile}{linkedin.com/in/yourprofile} \\
+    \faGithub \ \href{https://github.com/yourusername}{github.com/yourusername} \\
+\end{center}
+
+\vspace{1cm}
+
+\section*{Summary}
+A brief summary about yourself, your skills, and your career objectives. Highlight your passion for technology and innovation.
+
+\section*{Education}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Your Degree}, Your Major \\
+    Your University, Year of Graduation
+    \item \textbf{Additional Certifications} \\
+    Certification Name, Issuing Organization, Year
+\end{itemize}
+
+\section*{Experience}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Job Title} \\
+    Company Name, Location \\
+    \textit{Month Year -- Present} \\
+    Responsibilities and achievements in this role.
+    
+    \item \textbf{Previous Job Title} \\
+    Previous Company Name, Location \\
+    \textit{Month Year -- Month Year} \\
+    Responsibilities and achievements in this role.
+\end{itemize}
+
+\section*{Skills}
+\begin{itemize}[leftmargin=*]
+    \item Programming Languages: Python, JavaScript, etc.
+    \item Frameworks: React, Node.js, etc.
+    \item Tools: Git, Docker, etc.
+\end{itemize}
+
+\section*{Projects}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Project Name} \\
+    Brief description of the project, technologies used, and your contributions.
+    
+    \item \textbf{Another Project Name} \\
+    Brief description of the project, technologies used, and your contributions.
+\end{itemize}
+
+\section*{Publications}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Title of Your Article} \\
+    Brief description of the article and where it was published.
+\end{itemize}
+
+\section*{Interests}
+A brief list of your interests related to technology, innovation, and any other relevant hobbies.
+
+\end{document}

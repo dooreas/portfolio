@@ -1,0 +1,35 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "A personal portfolio website to showcase CV, articles, and curiosities.",
+  "main": "src/index.html",
+  "scripts": {
+    "build": "node tools/build/build-config.js",
+    "latex": "bash tools/latex/build-latex.sh",
+    "start": "live-server src"
+  },
+  "keywords": [
+    "portfolio",
+    "cv",
+    "articles",
+    "web",
+    "latex"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "homepage": "https://yourusername.github.io/personal-portfolio",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/personal-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/personal-portfolio/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

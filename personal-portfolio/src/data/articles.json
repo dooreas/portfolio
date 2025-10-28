@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "title": "Example Hosted Article",
+      "description": "An example of an HTML article hosted on this portfolio.",
+      "link": "/pages/articles/html/example-hosted-article.html",
+      "date": "2023-10-01"
+    },
+    {
+      "title": "Curiosity 1",
+      "description": "An intriguing exploration of a fascinating topic.",
+      "link": "/pages/articles/latex/curiosity-1.tex",
+      "date": "2023-10-05"
+    },
+    {
+      "title": "Curiosity 2",
+      "description": "A deep dive into another captivating subject.",
+      "link": "/pages/articles/latex/curiosity-2.tex",
+      "date": "2023-10-10"
+    }
+  ]
+}
