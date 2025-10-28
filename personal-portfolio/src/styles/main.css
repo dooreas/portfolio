@@ -182,3 +182,52 @@ footer p {
         margin: 10px;
     }
 }
+
+.intro-content {
+    max-width: 860px;
+    margin: 0;
+    padding: 6px 0 2px 0;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #dbeafe;
+    letter-spacing: 0.01em;
+}
+
+/* paragraphs in intro: better separation */
+.intro-content p {
+    margin: 0 0 14px 0;
+    color: #d6e7ff;
+    opacity: 0.95;
+}
+
+/* heading inside intro */
+.intro-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+    color: #e9f2ff;
+    font-weight: 600;
+}
+
+/* list spacing and alignment */
+.intro-content ul {
+    margin: 10px 0 14px 1.05rem; /* move list in from the left */
+    padding-left: 1.05rem;       /* ensure consistent indent */
+    list-style-position: outside;
+    color: #d6e7ff;
+}
+
+.intro-content ul li {
+    margin: 8px 0;
+}
+
+/* slightly soften strong emphasis for readability */
+.intro-content strong {
+    color: #eaf6ff;
+    font-weight: 700;
+}
+
+/* responsive tweaks */
+@media (max-width: 720px) {
+    .intro-content { padding: 0; font-size: 0.98rem; }
+    .intro-content h3 { font-size: 1.1rem; }
+}
