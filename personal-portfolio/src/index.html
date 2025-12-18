@@ -6,6 +6,18 @@
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/theme.css">
+    <!-- Page-scoped video preview styles -->
+    <style>
+    .video-grid{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px}
+    /* Two-column layout: each card occupies ~half the container width (minus gap) so widths sum to near 100% */
+    .video-card{flex:0 0 calc(50% - 8px);min-width:160px;max-width:none;position:relative;padding-top:16%;border-radius:8px;overflow:hidden;box-shadow:0 8px 20px rgba(3,10,30,0.55);background-size:cover;background-position:center;cursor:pointer}
+    .video-card .video-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0.0),rgba(0,0,0,0.28))}
+    /* Even smaller play button for tighter cards */
+    .play-btn{width:44px;height:44px;border-radius:50%;background:rgba(79,209,197,0.95);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(3,10,30,0.55)}
+    .play-btn svg{width:14px;height:14px;transform:translateX(1.5px);fill:#041017}
+    .video-caption{position:absolute;left:8px;bottom:8px;color:#e6f0ff;background:rgba(4,8,16,0.45);padding:4px 6px;border-radius:6px;font-size:0.78rem}
+    @media(max-width:780px){.video-card{flex:1 1 100%;max-width:none;padding-top:28%}}
+    </style>
 </head>
 <body>
     <header>
@@ -42,24 +54,45 @@
             </div>
         </section>
 
+        <section id="articles" class="container">
+            <h2 class="section-title">Articles</h2>
+            <p>Read my latest articles on various topics:</p>
+            <ul>
+                <li><a href="https://dooreas.github.io/vision_attack/">The Computer Vision Dark Arts - Tutorial 1: Fast Gradient Sign Method</a></li>
+                <li><a href="pages/articles/latex/curiosity-1.tex">No risk, only glory! An introduction to Selective Classification</a></li>
+                <li><a href="pages/articles/latex/curiosity-2.tex">A mathematical approach to collaborative adversaries and resource allocation</a></li>
+                <li><a href="pages/articles/latex/curiosity-3.tex">Doomed to failure: A history about target encoding and Tree-Based Algorithms</a></li>
+            </ul>
+        </section>
+
         <section id="cv" class="container">
             <h2 class="section-title">Curriculum Vitae</h2>
             <p>Check out my <a href="pages/cv/index.html">CV</a> for a detailed overview of my career and skills.</p>
         </section>
 
-        <section id="articles" class="container">
-            <h2 class="section-title">Articles</h2>
-            <p>Read my latest articles on various topics:</p>
-            <ul>
-                <li><a href="pages/articles/html/example-hosted-article.html">Example Hosted Article</a></li>
-                <li><a href="pages/articles/latex/curiosity-1.tex">Curiosity Article 1</a></li>
-                <li><a href="pages/articles/latex/curiosity-2.tex">Curiosity Article 2</a></li>
-            </ul>
-        </section>
-
         <section id="about" class="container">
-            <h2 class="section-title">About Me</h2>
-            <p>Learn more about my background and skills in the <a href="pages/about/index.html">About</a> section.</p>
+            <h2 class="section-title">Demos</h2>
+            <p>Bellow you can see two demos that I recorded as a competitor of the Agents MCP & Gradio Hackathon 2025 — A short walkthrough explaining MCP server tools and a Cybersecurity Analyst agent.</p>
+
+            <div class="video-grid" aria-label="MCP tool videos">
+                <div class="video-card" data-video-id="C6Z9EOW-3lE" style="background-image:url('https://img.youtube.com/vi/C6Z9EOW-3lE/hqdefault.jpg')" role="button" tabindex="0" aria-label="Watch: MCP server tools">
+                    <div class="video-overlay">
+                        <div class="play-btn" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="video-caption">MCP server tools — walkthrough</div>
+                </div>
+
+                <div class="video-card" data-video-id="c7Yg_jOD6J0" style="background-image:url('https://img.youtube.com/vi/c7Yg_jOD6J0/hqdefault.jpg')" role="button" tabindex="0" aria-label="Watch: MCP agent tools">
+                    <div class="video-overlay">
+                        <div class="play-btn" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="video-caption">MCP agent tools — walkthrough</div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -71,6 +104,25 @@
     </footer>
 
     <script src="scripts/main.js"></script>
+    <script>
+    // Keep preview visuals but always open the YouTube watch page in a new tab.
+    (function(){
+        function openVideoInNewTab(card){
+            const id = card && card.dataset && card.dataset.videoId;
+            if(!id) return;
+            const url = `https://www.youtube.com/watch?v=${id}`;
+            const w = window.open(url, '_blank');
+            try{ if(w) w.opener = null; }catch(e){}
+        }
+
+        document.querySelectorAll('.video-card').forEach(card=>{
+            card.addEventListener('click',(e)=>{ e.preventDefault(); openVideoInNewTab(card); });
+            card.addEventListener('keydown',(e)=>{
+                if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openVideoInNewTab(card); }
+            });
+        });
+    })();
+    </script>
     <script>
         // small onboarding script: set year and lazy-load hero background for perf
         document.getElementById('year').textContent = new Date().getFullYear();
