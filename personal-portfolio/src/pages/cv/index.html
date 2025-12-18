@@ -1,56 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum Vitae</title>
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link rel="stylesheet" href="../../styles/theme.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rodrigo Domínguez Sanz - CV</title>
+	<link rel="stylesheet" href="../../styles/main.css">
+	<link rel="stylesheet" href="../../styles/theme.css">
+
+	<!-- Small page-scoped tweaks to improve CV list and section title alignment -->
+	<style>
+	/* Ensure lists inside CV sections use the same comfortable indent as other lists */
+	.container .section ul {
+		margin: 0.6rem 0 0.8rem 1.25rem;
+		padding-left: 1.05rem;
+		list-style-position: outside;
+	}
+
+	.container .section li {
+		margin: 0.35rem 0;
+	}
+
+	/* Pull section titles out of the card: make them overlap the top edge */
+	.container .section {
+		position: relative;
+		padding-top: 1.6rem; /* extra top padding so content sits below the pulled title */
+		overflow: visible; /* allow title to sit outside the box */
+	}
+
+	/* Apply to the title elements (used as h3.section-title or h4) */
+	.container .section-title {
+		display: inline-block;
+		position: relative;
+		top: -1.1rem; /* pull up so it sits outside the box */
+		margin: 0 0 0 0;
+		padding: 6px 12px;
+		color: #e9f2ff; /* brighter to match site */
+		font-weight: 700;
+		font-size: 1rem;
+		line-height: 1;
+		border-left: 4px solid rgba(79,209,197,0.16);
+		border-radius: 6px;
+		background: transparent;
+		text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+	}
+
+	/* Slightly dim h4 subtitles but keep alignment */
+	.container h4 {
+		margin: 0.35rem 0 0.6rem 0;
+		color: #cfe6ff;
+		font-weight: 600;
+	}
+
+	/* Tables should align with the section content */
+	.container table { margin-left: 0; }
+
+	/* Subjects table: multi-column layout for MSc subjects */
+	.subjects-table {
+		width: 100%;
+		border-collapse: collapse;
+		margin-top: 8px;
+	}
+	.subjects-table td {
+		padding: 10px 12px;
+		vertical-align: top;
+		color: #d6e7ff;
+		border-bottom: 1px solid rgba(255,255,255,0.03);
+	}
+	.subjects-table thead th {
+		text-align: left;
+		padding-bottom: 8px;
+		color: #cfe6ff;
+		font-weight: 700;
+	}
+
+	/* Align contact info in a compact, responsive way */
+	.contact-info { display:flex; gap:16px; flex-wrap:wrap; }
+
+	@media (max-width:720px) {
+		.container .section ul { margin-left: 1rem; padding-left: 1rem; }
+		.container .section-title { top: -0.9rem; padding: 5px 10px; }
+		.container h4 { margin-top: 0.25rem; }
+	}
+	</style>
 </head>
 <body>
-    <header>
-        <!-- Include header component -->
-        <!-- This will be replaced with the content of src/components/header.html -->
-    </header>
+	<header>
+		<!-- Reuse the site's hero to keep background image and style consistent -->
+		<div class="hero" role="banner" aria-label="Hero section">
+			<div class="hero-overlay">
+				<img class="avatar" src="../../assets/images/me.jpg" alt="Rodrigo Domínguez Sanz">
+				<div class="hero-text">
+					<h1>Rodrigo Domínguez Sanz</h1>
+					<p>Curriculum Vitae — Mathematics & Machine Learning</p>
+				</div>
+			</div>
+		</div>
+	</header>
 
-    <main>
-        <section class="cv-section">
-            <h1>Curriculum Vitae</h1>
-            <p>Welcome to my CV page! Here you can find details about my professional journey, skills, and experiences.</p>
-            <div class="cv-content">
-                <h2>Professional Summary</h2>
-                <p>Dynamic and results-oriented professional with a strong background in [Your Field]. Proven ability to [Key Skills/Experiences].</p>
+	<main>
+		<!-- Use the same container/section styles as the rest of the site -->
+		<section class="container">
+			<h2 class="section-title">Curriculum Vitae</h2>
 
-                <h2>Education</h2>
-                <ul>
-                    <li>[Degree] in [Field] - [University], [Year]</li>
-                    <li>[Degree] in [Field] - [University], [Year]</li>
-                </ul>
+			<div class="section">
+				<h3 class="section-title">Work Experience</h3>
+				<h4>2023 - Present, Siemens</h4>
+				<p><strong>ML Engineer / Data Scientist</strong></p>
+				<ul>
+					<li>Design, implement, and operate AI use cases on top of an analytics platform leveraging cloud (AWS) and on-premise technologies.</li>
+					<li>Projects & Duties:
+						<ul>
+							<li>Optimization of SIEM & Cybersecurity Triage Defense Systems with ML.</li>
+							<li>Phishing Detection with AI.</li>
+							<li>Anomaly Detection in Security Rules.</li>
+							<li>Develop an Agentic Cybersecurity Analyst.</li>
+							<li>Detection of Automatically Generated Domains.</li>
+							<li>Red Teaming LLM applications.</li>
+							<li>Implementing the monitoring of machine learning models.</li>
+							<li>Reporting & Interacting with Stakeholders.</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 
-                <h2>Experience</h2>
-                <ul>
-                    <li>[Job Title] at [Company] - [Year] to [Year]</li>
-                    <li>[Job Title] at [Company] - [Year] to [Year]</li>
-                </ul>
+			<div class="section">
+				<h3 class="section-title">Education</h3>
+				<ul>
+					<li><strong>2022-2023, University of Edinburgh</strong><br>Artificial Intelligence Masters of Science with Merit. First Class Dissertation.</li>
+					<li><strong>2018-2022, Lancaster University</strong><br>Mathematics Msci Hons obtained with a first classification. Cohort's Best Mathematics dissertation. Best grade in Stochastic Calculus for Finance.</li>
+					<li><strong>2006 - 2018, Retamar IB World School</strong><br>Primary and Secondary education, National & International Baccalaureate. Awarded for Academic Excellence.</li>
+				</ul>
+			</div>
 
-                <h2>Skills</h2>
-                <ul>
-                    <li>[Skill 1]</li>
-                    <li>[Skill 2]</li>
-                    <li>[Skill 3]</li>
-                </ul>
+			<div class="section">
+				<h3 class="section-title">Projects</h3>
+				<h4>Artificial Intelligence Projects</h4>
+				<ul>
+					<li><strong>Dissertation with Dr. Sohan Seth:</strong> Develop a Deep Learning model for Census-Independent Population estimation based on Satellite Imagery.</li>
+					<li><strong>Applications of Convolutional Neural Networks in Space Debris Detection and Recognition:</strong> A research review describing the state-of-the-art applications of CNNs in Space Debris Detection and Recognition.</li>
+					<li><strong>Feature Engineering vs Deep Learning Approaches for the Image Classification:</strong> Implemented a classifier based on feature engineering and a DL Classifier for identifying superheroes in images.</li>
+					<li><strong>Attaining Context Awareness in Image Colourisation:</strong> Implementation of Conditional GANs for Image Colorization, and training ResNet34 for grayscale image classification.</li>
+					<li><strong>Identifying and Tackling the Vanishing Gradient Problem:</strong> Implementing VGG8 and VGG38 on the CIFAR100 image dataset to identify and palliate the Vanishing Gradient Problem.</li>
+					<li><strong>Cold Start Track Position Forecasting from Multiple Data Sources:</strong> Implementation and Evaluation of classical Machine Learning models in the task of track position prediction.</li>
+				</ul>
+				<h4>Mathematics Background</h4>
+				<ul>
+					<li>Mathematics Dissertation on Brownian Motion and the Dirichlet Problem.</li>
+					<li>Specialized in Probability Theory by taking modules on Stochastic Processes, Likelihood Inference, Machine Learning, Probability Theory, Mathematics for Stochastic Finance & Stochastic Calculus for Finance.</li>
+				</ul>
+			</div>
 
-                <h2>Contact</h2>
-                <p>If you would like to get in touch, please reach out via [Your Email] or connect with me on [LinkedIn/GitHub].</p>
-            </div>
-        </section>
-    </main>
+			<div class="section">
+				<h3 class="section-title">MSc Artificial Intelligence Subjects</h3>
+				<table class="subjects-table" aria-describedby="mcs-subjects">
+					<thead>
+						<tr><th id="mcs-subjects">Subjects</th><th></th><th></th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Probabilistic Modeling and Reasoning</td>
+							<td>Applied Machine Learning</td>
+							<td>Deep Learning</td>
+						</tr>
+						<tr>
+							<td>Image and Vision Computing</td>
+							<td>Natural Computing</td>
+							<td>Algorithmic Game Theory and its Applications</td>
+						</tr>
+						<tr>
+							<td>Introduction to Modern Cryptography</td>
+							<td>Informatics Research Review</td>
+							<td>Informatics Project Proposal</td>
+						</tr>
+						<tr>
+							<td>Dissertation - Population Estimation with Satellite Imagery</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-    <footer>
-        <!-- Include footer component -->
-        <!-- This will be replaced with the content of src/components/footer.html -->
-    </footer>
+			<div class="section">
+				<h3 class="section-title">MSci Mathematics Subjects</h3>
+				<table class="subjects-table" aria-describedby="mcs-subjects">
+					<thead>
+						<tr><th id="mcs-subjects">Advanced Subjects Selected</th><th></th><th></th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Stochastic Calculus for Finance</td>
+							<td>Mathematics for Stochastic Finance</td>
+							<td>Probability Theory</td>
+						</tr>
+						<tr>
+							<td>Likelihood Inference</td>
+							<td>Stochastic Processes</td>
+							<td>Machine Learning</td>
+						</tr>
+						<tr>
+							<td>Groups and Symmetries</td>
+							<td>Commutative Algebra</td>
+							<td>Algebraic Curves</td>
+						</tr>
+						<tr>
+							<td>Lie Groups and Lie Algebras</td>
+							<td>Hilbert Spaces</td>
+							<td>Metric Spaces</td>
+						</tr>
+						<tr>
+							<td>Lebesgue Integration</td>
+							<td>Geometry of Curves and Surfaces</td>
+							<td>Dissertation - Brownian Motion to solve the Dirichlet Problem</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-    <script src="../../scripts/main.js"></script>
+			<div class="section">
+				<h3 class="section-title">Technical Skills</h3>
+				<ul>
+					<li><strong>Experienced Python Programmer:</strong> Pandas, Numpy, Scikit-Learn, Scipy, Statsmodels, Pymoo, TensorFlow, PyTorch, Gradio, MCP, Jupyter, MatPlotlib, Plotly, SHAP, PyAgrum, NetworkX, Node2vec.</li>
+					<li><strong>Experience with AWS:</strong> S3, Codecommit, SageMaker, VPCs, EC2, Lambda, Cloudwatch.</li>
+					<li><strong>Version Control tools and platforms:</strong> Git, GitHub, Gitlab.</li>
+					<li><strong>Experience with Agile and DevSecOps with Jira.</strong></li>
+					<li><strong>Experience within Cybersecurity:</strong> Cybersecurity Triage, Anomaly Detection, Spam & Phishing Detection, System Administration Fundamentals, DevSecOps, Infrastructure-as-code: Terraform & Ansible, Docker, SQL, ElasticSearch.</li>
+				</ul>
+			</div>
+
+			<div class="section">
+				<h3 class="section-title">Languages</h3>
+				<p>Spanish - Mother tongue | English - Bilingual | French - B2</p>
+			</div>
+
+			<div class="section">
+				<h3 class="section-title">Awards and Competitions</h3>
+				<ul>
+					<li>2022, Participant in the IMA North West Branch Celebration of Mathematics Projects as the best mathematics dissertation from Lancaster University.</li>
+					<li>2018, Award for Second Year National Baccalaureate Studies, Retamar IB World School.</li>
+					<li>2017, Award for Efforts in First Year of National Baccalaureate Studies, Retamar IB World School.</li>
+				</ul>
+			</div>
+
+			<div class="section">
+				<h3 class="section-title">Extracurricular Activities</h3>
+				<ul>
+					<li>Ibiza Open Watter 2K swimming race, 2025: Finisher</li>
+					<li>Santa Eulalia Ibiza Marathon 2024: Half-Marathon Finisher.</li>
+					<li>Edinburgh Marathon Festival 2023: Half-Marathon Finisher.</li>
+					<li>Rhetoric Course at the Teatro Estudio Madrid, 2023-2024.</li>
+					<li>French B2 course at Paraninfo, 2023-2024.</li>
+					<li>Member of the Institute of Mathematics and its Applications.</li>
+				</ul>
+			</div>
+			<div class="section">
+				<h3 class="section-title">Contact Information</h3>
+				<div>
+					<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rodrigo-dom%C3%ADnguez-sanz-85b4171a8/">LinkedIn</a></p>
+					<p><strong>GitHub:</strong> <a href="https://github.com/dooreas">GitHub</a></p>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div id="footer" class="footer container">
+			<small>&copy; <span id="year"></span> — Built with a tech-first design.</small>
+		</div>
+	</footer>
+
+	<script src="../../scripts/main.js"></script>
+	<script>
+		// set year and lazy-load hero background for perf (same approach as main index)
+		document.getElementById('year').textContent = new Date().getFullYear();
+		(function(){
+			const hero = document.querySelector('.hero');
+			if(!hero) return;
+			const img = new Image();
+			img.src = '../../assets/images/tech-bg.png';
+			img.onload = () => hero.style.backgroundImage = `url('${img.src}')`;
+		})();
+	</script>
 </body>
 </html>
